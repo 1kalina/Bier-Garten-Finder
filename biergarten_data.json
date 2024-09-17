@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Giesinger Bräu",
+        "location": "Giesinger Platz 11, 81539 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.4",
+        "now open": "Yes"
+    },
+    {
+        "name": "Hirschgarten",
+        "location": "Hirschgarten 1, 80639 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.5",
+        "now open": "Yes"
+    },
+    {
+        "name": "Augustiner-Keller",
+        "location": "Ruhmeshalle 1, 80809 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.4",
+        "now open": "Yes"
+    },
+    {
+        "name": "Paulaner Bräuhaus",
+        "location": "Kapuzinerplatz 5, 80337 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.2",
+        "now open": "Yes"
+    },
+    {
+        "name": "Giesinger Bräu",
+        "location": "Giesinger Platz 11, 81539 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.4",
+        "now open": "Yes"
+    },
+    {
+        "name": "Biergarten im Englischen Garten",
+        "location": "Chinesischer Turm, 80538 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.4",
+        "now open": "Yes"
+    },
+    {
+        "name": "Kuffler's Wirtshaus",
+        "location": "St.-Jakobs-Platz 7, 80331 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.3",
+        "now open": "Yes"
+    },
+    {
+        "name": "Biergarten am Viktualienmarkt",
+        "location": "Viktualienmarkt 9, 80331 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.3",
+        "now open": "Yes"
+    },
+    {
+        "name": "Bräuhaus am Dampfspeicher",
+        "location": "Balanstraße 73, 81541 München, Germany",
+        "cost per Person": "€€",
+        "rating": "4.2",
+        "now open": "Yes"
+    }
+]

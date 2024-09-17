@@ -9,6 +9,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Event listener for the button
 document.getElementById('findBiergartenBtn').addEventListener('click', getUserLocation);
 
+// Fetch saved Biergärten from the JSON file
+function fetchSavedBiergartens() {
+    return fetch('biergarten_data.json')
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error fetching Biergärten data:', error);
+            return []; // Return an empty array in case of error
+        });
+}
+
 // Get the user's location
 function getUserLocation() {
     if (navigator.geolocation) {
@@ -35,8 +45,19 @@ function showPosition(position) {
         .bindPopup('You are here')
         .openPopup();
 
-    // Find nearby Biergärten
-    findNearestBiergarten(lat, lng);
+    // Fetch saved Biergärten and find the nearest one
+    fetchSavedBiergartens().then(biergartens => {
+        if (biergartens.length === 0) {
+            document.getElementById('info').innerHTML = 'No saved Biergärten available.';
+            return;
+        }
+
+        // Find the nearest Biergarten
+        let nearestBiergarten = findNearest(lat, lng, biergartens);
+        
+        // Display only the nearest Biergarten
+        displayBiergartenInfo(nearestBiergarten, lat, lng);
+    });
 }
 
 // Handle geolocation errors
@@ -57,31 +78,6 @@ function showError(error) {
     }
 }
 
-// Use the Overpass API to find the nearest Biergarten
-function findNearestBiergarten(lat, lng) {
-    let overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node(around:2000,${lat},${lng})[amenity=biergarten];out;`;
-
-    fetch(overpassUrl)
-        .then(response => response.json())
-        .then(data => {
-            let biergartens = data.elements;
-            if (biergartens.length === 0) {
-                document.getElementById('info').innerHTML = 'No Biergärten found nearby.';
-                return;
-            }
-
-            // Find the nearest Biergarten
-            let nearestBiergarten = findNearest(lat, lng, biergartens);
-            
-            // Display only the nearest Biergarten
-            displayBiergartenInfo(nearestBiergarten);
-        })
-        .catch(error => {
-            console.error('Error fetching Biergärten data:', error);
-            document.getElementById('info').innerHTML = 'Error fetching data.';
-        });
-}
-
 // Calculate the distance between two points using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371; // Radius of the Earth in kilometers
@@ -100,7 +96,7 @@ function findNearest(userLat, userLng, biergartens) {
     let minDistance = Infinity;
 
     biergartens.forEach(biergarten => {
-        let distance = calculateDistance(userLat, userLng, biergarten.lat, biergarten.lon);
+        let distance = calculateDistance(userLat, userLng, biergarten.location.lat, biergarten.location.lon);
         if (distance < minDistance) {
             minDistance = distance;
             nearest = biergarten;
@@ -111,19 +107,28 @@ function findNearest(userLat, userLng, biergartens) {
 }
 
 // Display information about the nearest Biergarten
-function displayBiergartenInfo(biergarten) {
-    let { lat, lon, tags } = biergarten;
-    let name = tags.name || 'Unnamed Biergarten';
+function displayBiergartenInfo(biergarten, userLat, userLng) {
+    let { location, name, cost, rating } = biergarten;
+    let lat = location.lat;
+    let lon = location.lon;
 
     // Add marker to the map for the nearest Biergarten
     L.marker([lat, lon]).addTo(map)
-        .bindPopup(`<strong>${name}</strong><br>Lat: ${lat}, Lon: ${lon}`)
+        .bindPopup(`<strong>${name}</strong><br>Lat: ${lat}, Lon: ${lon}<br>Cost: ${cost}<br>Rating: ${rating}`)
         .openPopup();
 
     // Show Biergarten info in the 'info' div
     document.getElementById('info').innerHTML = `
         <strong>${name}</strong><br>
         Latitude: ${lat}, Longitude: ${lon}<br>
-        Distance: ${calculateDistance(lat, lon, map.getCenter().lat, map.getCenter().lng).toFixed(2)} km
+        Cost: ${cost}<br>
+        Rating: ${rating}<br>
+        Distance: ${calculateDistance(lat, lon, userLat, userLng).toFixed(2)} km<br>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${lat},${lon}&travelmode=walking" target="_blank">
+            Navigate with Google Maps (Walking)
+        </a> | 
+        <a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm&route=${userLat}%2C${userLng}%3B${lat}%2C${lon}&transport=foot" target="_blank">
+            Navigate with OpenStreetMap (Walking)
+        </a>
     `;
 }
