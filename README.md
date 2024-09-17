@@ -1,1 +1,2 @@
-# 1kalina.github.io
+# BierGartenFinder
+https://1kalina.github.io/Bier-Garten-Finder/
