@@ -11,7 +11,7 @@ document.getElementById('findBiergartenBtn').addEventListener('click', getUserLo
 
 // Fetch saved Biergärten from the JSON file
 function fetchSavedBiergartens() {
-    return fetch('biergarten_data.json')
+    return fetch('biergarten_data.json') // Ensure this JSON file is available on your server
         .then(response => response.json())
         .catch(error => {
             console.error('Error fetching Biergärten data:', error);
@@ -96,7 +96,7 @@ function findNearest(userLat, userLng, biergartens) {
     let minDistance = Infinity;
 
     biergartens.forEach(biergarten => {
-        let distance = calculateDistance(userLat, userLng, biergarten.location.lat, biergarten.location.lon);
+        let distance = calculateDistance(userLat, userLng, biergarten.location.latitude, biergarten.location.longitude);
         if (distance < minDistance) {
             minDistance = distance;
             nearest = biergarten;
@@ -108,27 +108,37 @@ function findNearest(userLat, userLng, biergartens) {
 
 // Display information about the nearest Biergarten
 function displayBiergartenInfo(biergarten, userLat, userLng) {
-    let { location, name, cost, rating } = biergarten;
-    let lat = location.lat;
-    let lon = location.lon;
+    let { location, name, cost_per_person, rating, address,  opening_hours} = biergarten;
+    let lat = location.latitude;
+    let lon = location.longitude;
 
     // Add marker to the map for the nearest Biergarten
     L.marker([lat, lon]).addTo(map)
-        .bindPopup(`<strong>${name}</strong><br>Lat: ${lat}, Lon: ${lon}<br>Cost: ${cost}<br>Rating: ${rating}`)
+        .bindPopup(`<strong>${name}</strong><br>${address}<br>`)
         .openPopup();
+
+    // Center the map on the Biergarten location
+    map.setView([lat, lon], 14);
 
     // Show Biergarten info in the 'info' div
     document.getElementById('info').innerHTML = `
         <strong>${name}</strong><br>
-        Latitude: ${lat}, Longitude: ${lon}<br>
-        Cost: ${cost}<br>
+        Cost: ${cost_per_person}<br>
         Rating: ${rating}<br>
+        Opening hours: ${opening_hours}<br>
         Distance: ${calculateDistance(lat, lon, userLat, userLng).toFixed(2)} km<br>
         <a href="https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${lat},${lon}&travelmode=walking" target="_blank">
             Navigate with Google Maps (Walking)
-        </a> | 
+        </a> <br> 
+    `;
+}
+
+// to show a location:
+// Latitude: ${lat}, Longitude: ${lon}<br>
+// to navigate with OpenStreatMap
+/*
         <a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm&route=${userLat}%2C${userLng}%3B${lat}%2C${lon}&transport=foot" target="_blank">
             Navigate with OpenStreetMap (Walking)
         </a>
-    `;
-}
+
+*/

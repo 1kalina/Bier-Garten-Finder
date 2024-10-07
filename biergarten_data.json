@@ -1,65 +1,78 @@
 [
     {
-        "name": "Giesinger Bräu",
-        "location": "Giesinger Platz 11, 81539 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.4",
-        "now open": "Yes"
+      "name": "Viktualienmarkt Beergarden",
+      "location": {
+        "latitude": 48.135424995858,
+        "longitude": 11.576505979326
+      },
+      "cost_per_person": "10–20 €",
+      "opening_hours": "10:00 - 22:00, everyday",
+      "rating": "4.4",
+      "address": "Viktualienmarkt 9, 80331 München"
     },
+
     {
-        "name": "Hirschgarten",
-        "location": "Hirschgarten 1, 80639 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.5",
-        "now open": "Yes"
+      "name": "Park Café",
+      "location": {
+        "latitude": 48.14233298327,
+        "longitude": 11.56460602375
+      },
+      "cost_per_person": "20–30 €",
+      "opening_hours": "11:30 - 21:00, everyday",
+      "rating": "4.2",
+      "address": "Sophienstraße 7, 80333 München"
     },
+
     {
-        "name": "Augustiner-Keller",
-        "location": "Ruhmeshalle 1, 80809 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.4",
-        "now open": "Yes"
+      "name": "Augustiner-Keller",
+      "location": {
+        "latitude": 48.143502007305,
+        "longitude": 11.551942979708
+      },
+      "cost_per_person": "20–30 €",
+      "opening_hours": "10:00 - 00:00, everyday",
+      "rating": "4.4",
+      "address": "Arnulfstraße 52, 80335 München"
     },
+
     {
-        "name": "Paulaner Bräuhaus",
-        "location": "Kapuzinerplatz 5, 80337 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.2",
-        "now open": "Yes"
+      "name": "Löwenbräukeller ",
+      "location": {
+        "latitude": 48.148020984674,
+        "longitude": 11.558215996045
+      },
+      "cost_per_person": "20–30 €",
+      "opening_hours": "11:00 - 22:00, everyday",
+      "rating": "4.0",
+      "address": "Nymphenburger Str. 2, 80335 München,"
     },
+
     {
-        "name": "Giesinger Bräu",
-        "location": "Giesinger Platz 11, 81539 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.4",
-        "now open": "Yes"
+      "name": "Milchhäusl ",
+      "location": {
+        "latitude": 48.15000447491,
+        "longitude": 11.584534809747
+      },
+      "cost_per_person": "1–10 €",
+      "opening_hours": "10:00 - 22:00, everyday",
+      "rating": "4.1",
+      "address": "Veterinärstr 14, 80539 München,"
     },
+    
     {
-        "name": "Biergarten im Englischen Garten",
-        "location": "Chinesischer Turm, 80538 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.4",
-        "now open": "Yes"
-    },
-    {
-        "name": "Kuffler's Wirtshaus",
-        "location": "St.-Jakobs-Platz 7, 80331 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.3",
-        "now open": "Yes"
-    },
-    {
-        "name": "Biergarten am Viktualienmarkt",
-        "location": "Viktualienmarkt 9, 80331 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.3",
-        "now open": "Yes"
-    },
-    {
-        "name": "Bräuhaus am Dampfspeicher",
-        "location": "Balanstraße 73, 81541 München, Germany",
-        "cost per Person": "€€",
-        "rating": "4.2",
-        "now open": "Yes"
+      "name": "Olympiaalm ",
+      "location": {
+        "latitude": 48.171153696334,
+        "longitude": 11.554386807398
+      },
+      "cost_per_person": "10–20 €",
+      "opening_hours": "11:00 - 23:00, everyday",
+      "rating": "4.2",
+      "address": "Martin-Luther-King-Weg 8, 80809 München,"
     }
+
+
+
+
+
 ]
