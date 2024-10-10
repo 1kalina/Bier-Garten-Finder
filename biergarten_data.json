@@ -36,7 +36,7 @@
     },
 
     {
-      "name": "Löwenbräukeller ",
+      "name": "Löwenbräukeller",
       "location": {
         "latitude": 48.148020984674,
         "longitude": 11.558215996045
@@ -48,7 +48,7 @@
     },
 
     {
-      "name": "Milchhäusl ",
+      "name": "Milchhäusl",
       "location": {
         "latitude": 48.15000447491,
         "longitude": 11.584534809747
@@ -69,10 +69,96 @@
       "opening_hours": "11:00 - 23:00, everyday",
       "rating": "4.2",
       "address": "Martin-Luther-King-Weg 8, 80809 München,"
+    },
+
+    {
+      "name": "Max Emanuel Brauerei",
+      "location": 
+      {
+        "latitude": 48.1527123,
+        "longitude": 11.5764589
+      },
+      "cost_per_person": "20-30 €",
+      "opening_hours": "12:00 - 01:00, everyday",
+      "rating": "4.2",
+      "address": "Adalbertstraße 33, 80799 München,"
+    },
+
+    {
+      "name": "Paulaner am Nockherberg",
+      "location": 
+      {
+        "latitude": 48.1217511,
+        "longitude": 11.5825505
+      },
+      "cost_per_person": "20-40 €",
+      "opening_hours": "12:00 - 00:00, everyday",
+      "rating": "4.3",
+      "address": "Hochstraße 77, 81541 München,"
+    },
+
+    {
+      "name": "Hofbräukeller",
+      "location": 
+      {
+        "latitude": 48.1340843,
+        "longitude": 11.5952258
+      },
+      "cost_per_person": "20-30 €",
+      "opening_hours": "11:00 - 23:00, everyday",
+      "rating": "4.4",
+      "address": "Innere Wiener Straße 19, 81667 München,"
+    },
+
+    {
+      "name": "Geyerwally",
+      "location": 
+      {
+        "latitude": 48.1241677,
+        "longitude": 11.5658468
+      },
+      "cost_per_person": "1-20 €",
+      "opening_hours": "19:00 - 00:00, Sunday - closed",
+      "rating": "4.6",
+      "address": "Geyerstraße 17, 80469 München,"
+    },
+
+    {
+      "name": "Schneider Bräuhaus Berg am Laim",
+      "location": 
+      {
+        "latitude": 48.127663018241,
+        "longitude": 11.629775991491
+      },
+      "cost_per_person": "20-30 €",
+      "opening_hours": "16:30 - 23:30, everyday",
+      "rating": "4.3",
+      "address": "Baumkirchner Str. 5, 81673 München,"
+    },
+
+    {
+      "name": "Schinderstadl",
+      "location": 
+      {
+        "latitude": 48.10735601378,
+        "longitude": 11.552641024605
+      },
+      "cost_per_person": "1-20 €",
+      "opening_hours": "12:00 - 19:00, everyday",
+      "rating": "4.0",
+      "address": "Isarauen 2, 81379 München,"
+    },
+
+    {
+      "name": "Zum Flaucher Biergarten",
+      "location": 
+      {
+        "latitude": 48.108780979229,
+        "longitude": 11.557553993332
+      },
+      "cost_per_person": "10-20 €",
+      "opening_hours": "12:00 - 20:00, Thuesday - closed",
+      "rating": "4.3",
+      "address": "Isarauen 8, 81379 München,"
     }
-
-
-
-
-
 ]
